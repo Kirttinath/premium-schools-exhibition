@@ -1,0 +1,110 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.white-placeholder::placeholder {
+  color: #fff;
+  opacity: 1; /* ensures it's solid white, not faded */
+}
+.scroll-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.scroll-content {
+  display: flex;
+  gap: 40px;
+  animation: scroll-left 20s linear infinite;
+}
+
+.logo-box {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* Hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+html, body {
+  -ms-overflow-style: none;  /* IE, Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+@media (max-width: 991px) {
+  .gradient-overlay {
+    right: -23 !important; /* prevent excessive overlap on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .gradient-overlay {
+    background: linear-gradient(
+      to bottom,
+      #f5e9ff 0%,
+      #e6d4f7 80%,
+      rgba(230, 212, 247, 0.1) 100%
+    ) !important; /* change direction for mobile */
+  }
+
+  .col-lg-5,
+  .col-lg-7,
+  .col-md-6 {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .col-lg-5 {
+    min-height: auto !important;
+    padding: 2rem 1rem !important;
+  }
+}
+
+
