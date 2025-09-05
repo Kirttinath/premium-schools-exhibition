@@ -72,7 +72,7 @@ const HomePage = () => {
             {/* LEFT SIDE TEXT */}
             <div className="col-md-4" style={{ color: "#FFCC81" }}>
               <h2
-                className="fw-bold mt-2"
+                className="heroText fw-bold"
                 style={{ fontSize: "40px", lineHeight: "1.2" }}
               >
                 Discover Gurugram’s <br />

@@ -112,7 +112,6 @@ html, body {
   width: 100%;
   background: #fff;
   display: flex;
-  flex-wrap: wrap; /* allows wrapping on small screens */
   align-items: center;
   justify-content: space-between;
   height: 100px;
@@ -121,9 +120,16 @@ html, body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.header-logo {
+  position: relative;
+}
+
 .header-logo img {
-  height: 100px;
+  height: 120px;
   width: auto;
+  position: absolute; /* only works for >508px */
+  top: -10px;
+  left: 20px;
 }
 
 .header-btn {
@@ -133,21 +139,23 @@ html, body {
 /* Mobile responsive */
 @media (max-width: 508px) {
   .app-header {
-    display: flex;
-    align-items: start;
+    flex-direction: column; /* stack logo and button */
+    align-items: flex-start;
     height: auto;
     padding: 10px 15px;
-    flex-direction: column; /* stack logo and button */
     gap: 10px;
   }
-
+  .heroText{
+    margin-top: 30px;
+  }
   .header-logo img {
-    height: 100px;
+    position: static; /* remove absolute for small screens */
+    height: 80px;
   }
 
   .header-btn {
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
   }
 }
