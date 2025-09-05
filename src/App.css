@@ -80,7 +80,7 @@ html, body {
 }
 @media (max-width: 991px) {
   .gradient-overlay {
-    right: -23 !important; /* prevent excessive overlap on smaller screens */
+    right: 0 !important; /* prevent excessive overlap on smaller screens */
   }
 }
 
@@ -106,5 +106,48 @@ html, body {
     padding: 2rem 1rem !important;
   }
 }
+.app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0 20px;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+.header-logo img {
+  height: 100px;
+  width: auto;
+}
 
+.header-btn {
+  margin-top: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 508px) {
+  .app-header {
+    display: flex;
+    align-items: start;
+    height: auto;
+    padding: 10px 15px;
+    flex-direction: column; /* stack logo and button */
+    gap: 10px;
+  }
+
+  .header-logo img {
+    height: 100px;
+  }
+
+  .header-btn {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+  }
+}
