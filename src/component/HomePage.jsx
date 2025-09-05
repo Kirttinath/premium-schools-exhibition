@@ -419,9 +419,11 @@ const HomePage = () => {
             What Makes This Exhibition a Must-Visit
           </h3>
 
+          {/* Scrollable container */}
           <div
             className="row g-4 flex-nowrap overflow-auto px-2"
             style={{ scrollbarWidth: "none" }}
+            id="mustVisitScroll"
           >
             {[
               {
@@ -477,6 +479,14 @@ const HomePage = () => {
                 height: "45px",
                 border: "2px solid #fff",
               }}
+              onClick={() => {
+                const container = document.getElementById("mustVisitScroll");
+                const card = container.querySelector(".col-10");
+                container.scrollBy({
+                  left: -card.offsetWidth,
+                  behavior: "smooth",
+                });
+              }}
             >
               <span
                 className="d-flex align-items-center justify-content-center"
@@ -492,6 +502,14 @@ const HomePage = () => {
             <button
               className="btn btn-light rounded-circle d-flex align-items-center justify-content-center"
               style={{ width: "45px", height: "45px" }}
+              onClick={() => {
+                const container = document.getElementById("mustVisitScroll");
+                const card = container.querySelector(".col-10");
+                container.scrollBy({
+                  left: card.offsetWidth,
+                  behavior: "smooth",
+                });
+              }}
             >
               <span
                 className="d-flex align-items-center justify-content-center"
@@ -503,6 +521,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
       {/* Footer */}
       <footer
         className="text-white pt-5 w-100"

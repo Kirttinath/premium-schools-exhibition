@@ -33,13 +33,14 @@ const ConfigButton = ({ label, handleButtonClick, className = "", disabled = fal
       onClick={handleClick}
       disabled={disabled}
       type="button"
-      className={`btn d-flex align-items-center position-relative overflow-hidden border border-2 rounded ${className}`}
+      className={`btn d-flex align-items-center position-relative overflow-hidden rounded ${className}`}
       style={{
         minWidth: isReset ? "300px" : "210px",
         height: "60px",
         cursor: disabled ? "not-allowed" : "pointer",
         opacity: disabled ? 0.5 : 1,
         backgroundColor: bgColor,
+        border: `2px solid ${!isSubmit ? primary : secondary}`,
         padding: 0,
       }}
     >
